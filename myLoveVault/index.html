@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Vault ❤️</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- SCREEN 1: Welcome Screen -->
+    <div id="welcome-screen" class="screen">
+        <div class="card text-center" id="welcome-card">
+            <h1 class="title">Love Vault ❤️</h1>
+            
+            <!-- Stage 2 Content: Question Panel -->
+            <div id="gatekeeper-content" class="flow-content hidden-initially">
+                <label for="owner-name" class="gate-label">Kanino ka lang? 🥺</label>
+                <input type="text" id="owner-name" placeholder="Type my name..." autocomplete="off">
+            </div>
+            
+            <!-- Stage 3 Content: Romantic Message -->
+            <div id="welcome-message-content" class="flow-content hidden-initially">
+                <p class="message">Hi Love,<br><br>I made this little place just for you.<b></b>Inside are letters, memories, and little pieces of my heart.
+                </p>
+            </div>
+
+            <button id="get-started-btn" class="btn">Get Started ❤️</button>
+        </div>
+    </div>
+
+    <!-- SCREEN 2: Menu Options Screen -->
+    <div id="menu-screen" class="screen hidden">
+        <div class="card text-center">
+            <h2 class="subtitle">What would you like to explore, Love? ✨</h2>
+            <div class="menu-options">
+                <button id="go-album-btn" class="btn menu-btn">View Gallery 📸</button>
+                <button id="go-vault-btn" class="btn menu-btn outline-btn">Open Letters 🔒</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 3: Progressive Album Screen -->
+    <div id="album-screen" class="screen hidden">
+        <div class="card album-card" style="position: relative;">
+            <button id="clear-progress-btn" title="Reset Memories" style="position: absolute; top: 20px; right: 25px; background: none; border: none; font-size: 1.2rem; cursor: pointer; opacity: 0.4; transition: opacity 0.3s;">🗑️</button>
+            <h2 class="subtitle text-center">Unlocked Memories 📸</h2>
+            <div class="album-grid" id="dynamic-album-grid"></div>
+            <button id="back-from-album-btn" class="btn text-center" style="margin-top: 1.5rem;">Back to Menu ↩️</button>
+        </div>
+    </div>
+
+    <!-- SCREEN 4: Secret Code Screen -->
+    <div id="code-screen" class="screen hidden">
+        <div class="card text-center">
+            <h2 class="subtitle">Enter Secret Code 🔒</h2>
+            <div class="input-group">
+                <input type="password" id="secret-code" placeholder="Enter the code on your paper..." autocomplete="off">
+                <button id="open-vault-btn" class="btn">Open Message</button>
+            </div>
+            <button id="back-from-code-btn" class="btn outline-btn" style="margin-top: 1rem; padding: 10px 20px; font-size: 0.9rem;">Back to Menu ↩️</button>
+        </div>
+    </div>
+
+    <!-- SCREEN 5: Message Display Area (3D Flipping Card Container) -->
+    <div id="message-display" class="screen hidden">
+        <div class="flip-card-container">
+            <div class="flip-card-inner" id="flip-card">
+                <!-- Front Side -->
+                <div class="flip-card-front">
+                    <div class="photo-frame">
+                        <img id="vault-image" src="" alt="Our Memory">
+                    </div>
+                    <p class="tap-hint">Tap the card to read it... ✨</p>
+                </div>
+                <!-- Back Side -->
+                <div class="flip-card-back">
+                    <h2 class="subtitle">For Your Eyes Only </h2>
+                    <p class="message" id="secret-text"></p>
+                    <button id="lock-vault-btn" class="btn">Close Vault 🔒</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OVERLAY EXTRA: The Custom Dramatic Emergency Modal -->
+    <div id="dramatic-modal-overlay" class="modal-overlay hidden">
+        <div class="danger-card text-center" id="danger-card-element">
+            <div class="danger-icon">🚨 EMERGENCY 🚨</div>
+            <h2 class="danger-title">you dont lab me no moh? 🥺💔</h2>
+            <p class="danger-desc">Warning: This action breaks my heart completely. Enter your name to authorize the destruction of our memories.</p>
+            <div class="input-group" style="margin-bottom: 1.5rem;">
+                <input type="password" id="danger-confirm-input" placeholder="Type your name if you dare..." autocomplete="off">
+            </div>
+            <div style="display: flex; gap: 1rem; width: 100%;">
+                <button id="danger-cancel-btn" class="btn" style="background: #2ed573;">I Still Lab You! ❤️</button>
+                <button id="danger-confirm-btn" class="btn danger-confirm-action-btn">Delete 😭</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
